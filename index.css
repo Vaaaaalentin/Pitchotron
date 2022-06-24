@@ -18,14 +18,15 @@ h1,
 }
 
 #screen,
-#screen .select select,
-#screen .select select option{
+#screen .select-group select,
+#screen .select-group select option{
   font-family: 'VT323', monospace;
 }
 
 #screen .title{
   font-family: 'Press Start 2P', cursive;
 }
+
 /** BODY **/
 body{
   background-color: #ADBBC1;
@@ -40,18 +41,20 @@ h1, #logo > span{
 
   position: relative;
 }
+h1{
+  margin: 0 0 10px;
+}
 
 /** CURSOR **/
 #screen,
-#screen .radio-group .radio label,
-#screen .checkbox label
+#screen label
 {
   cursor: url('medias/images/cursor.png'), auto;
 }
 
 /** COLORS **/
 #screen,
-#screen .select select{
+#screen .select-group select{
   color: #91ff91;
 }
 
@@ -89,7 +92,8 @@ h1, #logo > span{
 
 #screen{
   width: 720px;
-  height: 576px;
+  height: 546px;
+  padding: 30px;
 
   background-color: #101010;
 
@@ -161,7 +165,7 @@ h1, #logo > span{
 #screen .button{
   border: solid 2px #91ff91;
   box-shadow: 0px 0px 5px #91ff91, inset 0px 0px 5px #91ff91;
-  padding: 5px 8px;
+  padding: 5px 10px;
   display: flex;
   flex-direction: column;
   width: fit-content;
@@ -174,6 +178,9 @@ h1, #logo > span{
   background-color: #91ff91;
   text-shadow: inset 0px 0px 1px #91ff91;
 }
+#screen .button:active{
+  opacity: 0.7;
+}
 #screen .button .small{
   font-size: 0.8em;
   text-align: right;
@@ -185,13 +192,13 @@ h1, #logo > span{
 #screen .button .big:only-child{
   margin-top: 18px;
 }
-#screen .select select{
+#screen .select-group select{
   font-size: 1em;
   border: solid 2px #91ff91;
   box-shadow: 0px 0px 5px #91ff91, inset 0px 0px 5px #91ff91;
   background: rgba(0, 0, 0, 0);
 }
-#screen .select select option{
+#screen .select-group select option{
   background: #404040;
 }
 
@@ -215,35 +222,64 @@ h1, #logo > span{
   opacity: 1;
 }
 
-#screen .checkbox{
+#screen .checkbox-group{
   user-select: none;
 }
-#screen .checkbox input[type=checkbox]{
+#screen .checkbox-group input[type=checkbox]{
   display: none;
 }
-#screen .checkbox label{
+#screen .checkbox-group label{
   position: relative;
 }
-#screen .checkbox label::before,
-#screen .checkbox label::after{
+#screen .checkbox-group label::before,
+#screen .checkbox-group label::after{
   position: absolute;
   top: 0;
   left: 0;
   line-height: 1.6;
   font-size: 0.8em;
 }
-#screen .checkbox input[type=checkbox]:not(:checked) + label::before{
+#screen .checkbox-group input[type=checkbox]:not(:checked) + label::before{
   content: "\2716";
 }
-#screen .checkbox input[type=checkbox]:checked + label::after{
+#screen .checkbox-group input[type=checkbox]:checked + label::after{
   content: "\2714";
 }
-#screen .checkbox label > span{
+#screen .checkbox-group label > span{
   opacity: 0.8;
   margin-left: 0.8em;
 }
-#screen .checkbox input[type=checkbox]:checked + label>span{
+#screen .checkbox-group input[type=checkbox]:checked + label>span{
   opacity: 1;
+}
+
+#screen .number-radio-group{
+
+}
+#screen .number-radio-group .fake-label{
+
+}
+#screen .number-radio-group .numbers{
+  display: flex;
+}
+#screen .number-radio-group .numbers .step{
+  flex-grow: 1;
+  text-align: center;
+  position: relative;
+}
+#screen .number-radio-group .numbers .step input{
+  display: none;
+}
+#screen .number-radio-group .numbers .step input:checked ~ label{
+  background-color: #91ff91;
+  color: #404040;
+}
+#screen .number-radio-group .numbers .step input:checked ~ label::before,
+#screen .number-radio-group .numbers .step input:checked ~ label::after{
+  display: none;
+}
+#screen .number-radio-group .numbers .step label{
+  padding: 0 4px;
 }
 
 #screen ul{
@@ -254,8 +290,65 @@ h1, #logo > span{
   padding-left: 10px;
 }
 
+#content-holder{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 #content{
-  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+}
+
+#list-holder{
+  border: solid 2px #91ff91;
+  box-shadow: 0px 0px 5px #91ff91, inset 0px 0px 5px #91ff91;
+  flex-grow: 3;
+  flex-basis: 0;
+  margin-right: 10px;
+}
+
+#pitch-list{
+  padding-right: 10px;
+}
+#pitch-list .pitch{
+
+}
+#pitch-list .separator{
+  list-style-type: none;
+  text-align: center;
+  padding: 8px 0;
+}
+
+#controls-holder{
+  /*border: solid 2px #91ff91;
+  box-shadow: 0px 0px 5px #91ff91, inset 0px 0px 5px #91ff91;*/
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+#parameters .parameter{
+  margin-bottom: 15px;
+}
+#parameters .parameter:last-child{
+  margin-bottom: initial;
+}
+#parameters .parameter .fake-label{
+  text-decoration: dotted 1px #91ff91;
+}
+
+#parts-pitch .checkbox-group{
+  padding-left: 8px;
+}
+
+#generate-button{
+  margin-top: auto;
+  text-align: right;
+  text-align: -moz-right;
 }
 
 #control-panel{

@@ -20,8 +20,80 @@
       <div id="computer">
         <div id="screen-holder">
           <div id="screen">
-            <div id="content">
+            <div id="content-holder">
               <h1>Pitchotron</h1>
+              <div id="content">
+                <div id="list-holder">
+                  <ul id="pitch-list">
+                    <li class="default">***** Aucun pitch à afficher :( *****</li>
+                    <li class="pitch">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                    <li class="separator">***************</li>
+                    <li class="pitch">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                  </ul>
+                </div>
+                <div id="controls-holder">
+                  <div id="parameters">
+
+                    <div id="nb-pitch" class="number-radio-group parameter">
+                      <span class="fake-label">Nombre de pitch</span>
+                      <div class="numbers">
+                        <div class="step">
+                          <input type="radio" name="nb-pitch" value="1" id="nb-radio-1" checked/>
+                          <label for="nb-radio-1">1</label>
+                        </div>
+                        <div class="step">
+                          <input type="radio" name="nb-pitch" value="2" id="nb-radio-2"/>
+                          <label for="nb-radio-2">2</label>
+                        </div>
+                        <div class="step">
+                          <input type="radio" name="nb-pitch" value="3" id="nb-radio-3"/>
+                          <label for="nb-radio-3">3</label>
+                        </div>
+                        <div class="step">
+                          <input type="radio" name="nb-pitch" value="4" id="nb-radio-4"/>
+                          <label for="nb-radio-4">4</label>
+                        </div>
+                        <div class="step">
+                          <input type="radio" name="nb-pitch" value="5" id="nb-radio-5"/>
+                          <label for="nb-radio-5">5</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="parts-pitch" class="parameter">
+                      <span class="fake-label">Parties à inclure</span>
+                      <div class="checkbox-group">
+                        <input type="checkbox" id="part-principal" name="part-principal" checked disabled>
+                        <label for="part-principal"><span>Principal</span></label>
+                      </div>
+                      <div class="checkbox-group">
+                        <input type="checkbox" id="part-gameplay" name="part-gameplay" checked>
+                        <label for="part-gameplay"><span>Gameplay</span></label>
+                      </div>
+                      <div class="checkbox-group">
+                        <input type="checkbox" id="part-marketing" name="part-marketing" checked>
+                        <label for="part-marketing"><span>Marketing</span></label>
+                      </div>
+                      <div class="checkbox-group">
+                        <input type="checkbox" id="part-contexte" name="part-contexte" checked>
+                        <label for="part-contexte"><span>Contexte</span></label>
+                      </div>
+                      <div class="checkbox-group">
+                        <input type="checkbox" id="part-histoire" name="part-histoire" checked>
+                        <label for="part-histoire"><span>Histoire</span></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="generate-button">
+                    <span class="button">
+                      <span class="small">générer</span>
+                      <span class="big">Pitch</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
